@@ -150,15 +150,15 @@ def Creat_datalaoders_DICOM(train_dir: str,
   """
     # Creating training and test dataset
     train_data = Custom_dataset_DICOM(train_dir, transform = transform)
-    test_data = Custom_dataset_DICOM(test_data, transform = transform)
+    test_data = Custom_dataset_DICOM(test_dir, transform = transform)
     
     
     # Creating Dataloader
-    train_datalaoder = DataLoader(dataset = train_data,
+    train_datalaoder_DICOM = DataLoader(dataset = train_data,
                                   batch_size = batch_size,
                                   shuffle = True)
-    test_datalaoder = DataLoader(dataset = test_data,
+    test_datalaoder_DICOM = DataLoader(dataset = test_data,
                                  batch_size = batch_size,
                                  shuffle = False)
     
-    return train_datalaoder, test_datalaoder, train_data.classes
+    return train_datalaoder_DICOM, test_datalaoder_DICOM, train_data.classes
