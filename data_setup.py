@@ -7,7 +7,7 @@ import os
 import torchvision
 from torchvision import transforms
 from torch.utils.data import DataLoader
-import pydicom
+
 import torch
 from torch.utils.data import Dataset
 import numpy as np
