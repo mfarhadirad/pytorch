@@ -16,8 +16,9 @@ from pathlib import Path
 
 try:
     import pydicom
-except:
-    !pip install pydicom
+except ImportError:
+    import subprocess
+    subprocess.check_call(['pip', 'install', 'pydicom'])
     import pydicom
     
 NUM_WORKER = os.cpu_count()
