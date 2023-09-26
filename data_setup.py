@@ -14,6 +14,12 @@ import numpy as np
 from typing import Tuple, Dict, List
 from pathlib import Path
 
+try:
+    import pydicom
+except:
+    !pip install pydicom
+    import pydicom
+    
 NUM_WORKER = os.cpu_count()
 
 
