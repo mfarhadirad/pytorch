@@ -89,7 +89,7 @@ class Custom_dataset_DICOM(Dataset):
     
     def __getitem__(self, index: int) -> Tuple[torch.Tensor, int]:
         img = self.load_image(index)
-        class_names = self.path[index].parent.name # expects path in data_folder/class_name/image.dcm
+        class_names = self.paths[index].parent.name # expects path in data_folder/class_name/image.dcm
         class_idx = self.class_to_idx[class_name]
         
         #transform 
